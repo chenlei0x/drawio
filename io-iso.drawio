@@ -1,11 +1,11 @@
-<mxfile host="app.diagrams.net" modified="2020-12-28T07:01:08.832Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36" etag="hAgv6NkQAtq4ewIIgWKB" version="13.11.0" type="github">
+<mxfile host="app.diagrams.net" modified="2020-12-28T09:25:13.990Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36" etag="SFVYfpL4xBo2WfPYKPGL" version="13.11.0" type="github">
   <diagram id="-onmPk4miG5qpfCvKEWN" name="Page-1">
     <mxGraphModel dx="4199" dy="928" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="AnmdYsWiVzskDCuWbKyH-101" value="一个node设置为weight 前提是&lt;br&gt;1. root 节点点必须已经是weight 模式&lt;br&gt;or&lt;br&gt;2. 上层有一个节点设置了weight bw&lt;br&gt;or&lt;br&gt;3. 子树节点 且保留带宽&lt;br&gt;&lt;br&gt;一个点被置为weight后，其bps/iops限速模式失效&lt;br&gt;&lt;br&gt;&lt;br&gt;weight node 的所有子节点，不乱他们处于什么模式，&lt;br&gt;仍需上爬，但遇到weight 节点直接跳过&lt;br&gt;&lt;br&gt;设置了子树节点之后，直接派发，不需要再上爬&lt;br&gt;&lt;br&gt;&lt;span&gt;权重模式&lt;/span&gt;&lt;br&gt;&lt;div&gt;1. 子节点需要权重模式，其父节点必须也是权重模式，所以权重模式必须从根节点开始设置&lt;/div&gt;&lt;div&gt;2. 一个节点可以成为一个子树的根节点&lt;/div&gt;&lt;div&gt;3. 设置子树模式：&lt;span&gt;&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;1）设置一个node 为 subroot node&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;2）子树模式的节点可以处于bps/iops /weight模式之一，如果是weight模式必须设置带宽，&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;否则该节点下的进程不知道分多少带宽&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;4. root 不允许设置保留带宽，防止出问题&lt;/div&gt;&lt;div&gt;5. 取消weight 模式时,必须要保证其子节点都退出了weight模式&lt;/div&gt;&lt;div&gt;6.&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
-          <mxGeometry x="-1050" y="10" width="500" height="400" as="geometry" />
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-101" value="一个node设置为weight 前提是&lt;br&gt;1. root 节点点必须已经是weight 模式&lt;br&gt;or&lt;br&gt;2. 上层有一个节点设置了weight bw，每个节点就算处于bps/iops模式，都有一个默认的weight&amp;nbsp;&lt;br&gt;or&lt;br&gt;3. 存在一个子树节点 且设置了保留带宽&lt;br&gt;&lt;br&gt;一个点被置为weight后，其bps/iops限速模式失效&lt;br&gt;&lt;br&gt;派发过程：&lt;br&gt;weight node 的所有子节点，不乱他们处于什么模式，&lt;br&gt;仍需上爬，但遇到weight 节点直接跳过&lt;br&gt;设置了子树节点之后，直接派发，不需要再上爬&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;设置子树模式：&lt;span&gt;&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;1）设置一个node 为 subroot node&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;2）子树模式的节点可以处于bps/iops /weight模式之一，如果是weight模式必须设置带宽，&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;否则该节点的进程不知道分多少带宽，如果是bps/iops模式，则子节点派发时，扔需要过自己，&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;如果什么都不设置，该节点带宽不受限制&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;3）设置weight模式&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;4. root 不允许设置保留带宽，防止出问题&lt;/div&gt;&lt;div&gt;5. 一个节点如果设置了保留带宽，分配时不再需要借助父节点的带宽来进行权重分配&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;关于子层级根节点 保留带宽 以及该节点是否使用权重模式的关系&lt;/div&gt;&lt;div&gt;1.&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="-1050" y="10" width="520" height="410" as="geometry" />
         </mxCell>
         <mxCell id="AnmdYsWiVzskDCuWbKyH-1" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d80073;strokeColor=#A50040;fontColor=#ffffff;" vertex="1" parent="1">
           <mxGeometry x="380" y="150" width="120" height="80" as="geometry" />
@@ -285,6 +285,97 @@
         </mxCell>
         <mxCell id="AnmdYsWiVzskDCuWbKyH-107" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" vertex="1" parent="1">
           <mxGeometry x="-1060" y="760" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-111" value="root&lt;br&gt;write bps = 20MB/s&lt;br&gt;read bps = 10MB/s" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d80073;strokeColor=#A50040;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="-740" y="1130" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-112" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;dashed=1;" edge="1" source="AnmdYsWiVzskDCuWbKyH-113" target="AnmdYsWiVzskDCuWbKyH-111" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-113" value="A&lt;br&gt;&lt;br&gt;bandwidth = 100MB/s" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fa6800;strokeColor=#C73500;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="-850" y="1280" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-114" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" source="AnmdYsWiVzskDCuWbKyH-115" target="AnmdYsWiVzskDCuWbKyH-111" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-115" value="B&lt;br&gt;&lt;span&gt;write bps = 300MB/s&lt;/span&gt;&lt;br&gt;&lt;span&gt;read bps = 100MB/s&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d80073;strokeColor=#A50040;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="-620" y="1280" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-118" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;fillColor=#fa6800;strokeColor=#C73500;" edge="1" parent="1" source="AnmdYsWiVzskDCuWbKyH-116" target="AnmdYsWiVzskDCuWbKyH-113">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-116" value="C&lt;br&gt;weight = 200&lt;br&gt;&lt;br&gt;50MB/s" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fa6800;strokeColor=#C73500;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="-960" y="1440" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-119" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;fillColor=#fa6800;strokeColor=#C73500;" edge="1" parent="1" source="AnmdYsWiVzskDCuWbKyH-120" target="AnmdYsWiVzskDCuWbKyH-113">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-699.9999999999995" y="1440" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-120" value="D&lt;br&gt;weight = 200&lt;br&gt;&lt;br&gt;50MB/s" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fa6800;strokeColor=#C73500;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="-750" y="1440" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-121" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#3A5431;align=left;fillColor=#6d8764;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="-690" y="1290" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-122" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#3A5431;align=left;fillColor=#6d8764;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="-360" y="1220" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-123" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#3A5431;align=left;fillColor=#6d8764;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="-360" y="1250" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-124" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#3A5431;align=left;fillColor=#6d8764;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="-570" y="1240" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-125" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#3A5431;align=left;fillColor=#6d8764;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="-940" y="1230" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-132" value="" style="curved=1;endArrow=classic;html=1;exitX=0;exitY=0;exitDx=0;exitDy=0;fillColor=#60a917;strokeColor=#2D7600;" edge="1" parent="1" source="AnmdYsWiVzskDCuWbKyH-116">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-1090" y="1320" as="sourcePoint" />
+            <mxPoint x="-680" y="1090" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-1010" y="1400" />
+              <mxPoint x="-970" y="1260" />
+              <mxPoint x="-870" y="1180" />
+              <mxPoint x="-830" y="1150" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-133" value="" style="curved=1;endArrow=classic;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;fillColor=#60a917;strokeColor=#2D7600;" edge="1" parent="1" source="AnmdYsWiVzskDCuWbKyH-120">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-1230" y="1420" as="sourcePoint" />
+            <mxPoint x="-670" y="1090" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-680" y="1350" />
+              <mxPoint x="-680" y="1260" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-135" value="" style="shape=datastore;whiteSpace=wrap;html=1;strokeColor=#000000;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-710" y="1000" width="80" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-136" value="" style="curved=1;endArrow=classic;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;fillColor=#60a917;strokeColor=#2D7600;" edge="1" parent="1" source="AnmdYsWiVzskDCuWbKyH-115">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-480" y="1260" as="sourcePoint" />
+            <mxPoint x="-660" y="1090" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-550" y="1260" />
+              <mxPoint x="-650" y="1180" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-140" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#3A5431;align=left;fillColor=#6d8764;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="-920" y="1200" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-141" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#3A5431;align=left;fillColor=#6d8764;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="-980" y="1270" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-143" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#3A5431;align=left;fillColor=#6d8764;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="-690" y="1320" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-144" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#3A5431;align=left;fillColor=#6d8764;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="-590" y="1210" width="20" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
