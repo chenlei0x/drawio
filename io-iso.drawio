@@ -1,11 +1,11 @@
-<mxfile host="app.diagrams.net" modified="2020-12-29T03:46:11.540Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36" etag="yqIz2JM4YR4vC7mYqw0O" version="13.11.0" type="github">
+<mxfile host="app.diagrams.net" modified="2020-12-29T09:22:11.023Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36" etag="AEpA297RfTgtoB_Ww3Bl" version="13.11.0" type="github">
   <diagram id="-onmPk4miG5qpfCvKEWN" name="Page-1">
     <mxGraphModel dx="4543" dy="2283" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="AnmdYsWiVzskDCuWbKyH-101" value="一个node设置为weight 前提是&lt;br&gt;1. 父节点是root 节点，且父点必须已经是weight 模式，这时候总带宽为探测带宽，或者root节点设置了保留带宽&lt;br&gt;or&lt;br&gt;2. 直系父节点设置了保留带宽，且处于weight模式&lt;br&gt;&lt;br&gt;一个点被置为weight后，其bps/iops限速模式失效&lt;br&gt;&lt;br&gt;派发过程：&lt;br&gt;weight node 的所有子节点，不论他们处于什么模式，依然需要爬树&lt;br&gt;设置了子树节点之后，直接派发，不需要再上爬&lt;br&gt;遇到weight 节点直接跳过&lt;br&gt;遇到保留带宽节点节点，跳过&lt;br&gt;&lt;br&gt;为了简化逻辑，设置了保留带宽，必须是weight模式&lt;br&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;设置子树模式：&lt;span&gt;&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;1）设置一个node 为 subroot node&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;2）子树模式的节点可以处于bps/iops /weight模式之一&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; 如果是weight模式必须设置带宽，&lt;/span&gt;&lt;span&gt;否则该节点的进程不知道分多少带宽，&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; 如果是bps/iops模式，则子节点派发时，扔需要过自己，&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; 如果什么都不设置，该节点带宽不受限制&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;一个节点如果设置了保留带宽，分配时不再需要借助父节点的带宽来进行权重分配&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;设置了带宽预留 则自动使能weight 模式，此时weight device 没用，leaf weight 自动设置为default weight&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;关于子层级根节点 保留带宽 以及该节点是否使用权重模式的关系&lt;/div&gt;&lt;div&gt;1. 子层级根节点只是保证了派发时可以跳过上层，直达设备&lt;/div&gt;&lt;div&gt;2. 为了简化逻辑设置了保留带宽，则该节点一定是weight模式的&lt;/div&gt;&lt;div&gt;如果本节点是不使用权重模式，那么本节点可能是bps/iops模式，&lt;br&gt;那么该节点又会影响子节点，这和权重模式相冲突&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;保留带宽是为了分配leaf 和 children 的带宽的，所以如果子节点和本节点需要使用权重模式，&lt;/div&gt;&lt;div&gt;则必须指定保留带宽，否则子节点和本节点的带宽分配根据探测到的带宽&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
-          <mxGeometry x="-1200" y="-690" width="600" height="570" as="geometry" />
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-101" value="一个node设置为weight 前提是&lt;br&gt;1. 父节点是root 节点，且父点必须已经是weight 模式，这时候总带宽为探测带宽，或者root节点设置了保留带宽&lt;br&gt;or&lt;br&gt;2. 直系父节点设置了保留带宽，且处于weight模式&lt;br&gt;&lt;br&gt;一个点被置为weight后，其bps/iops限速模式失效&lt;br&gt;&lt;br&gt;派发过程：&lt;br&gt;weight node 的所有子节点，不论他们处于什么模式，依然需要爬树&lt;br&gt;设置了子树节点之后，直接派发，不需要再上爬&lt;br&gt;遇到weight 节点直接跳过&lt;br&gt;遇到保留带宽节点节点，跳过&lt;br&gt;&lt;br&gt;为了简化逻辑，设置了保留带宽，必须是weight模式&lt;br&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;设置子树模式：&lt;span&gt;&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;1）设置一个node 为 subroot node&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;2）子树模式的节点可以处于bps/iops /weight模式之一&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; 如果是weight模式必须设置带宽，&lt;/span&gt;&lt;span&gt;否则该节点的进程不知道分多少带宽，&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; 如果是bps/iops模式，则子节点派发时，扔需要过自己，&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; 如果什么都不设置，该节点带宽不受限制&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;一个节点如果设置了保留带宽，分配时不再需要借助父节点的带宽来进行权重分配&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;设置了带宽预留 则自动使能weight 模式，此时weight device 没用，leaf weight 自动设置为default weight&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;关于子层级根节点 保留带宽 以及该节点是否使用权重模式的关系&lt;/div&gt;&lt;div&gt;1. 子层级根节点只是保证了派发时可以跳过上层，直达设备&lt;/div&gt;&lt;div&gt;2. 为了简化逻辑设置了保留带宽，则该节点一定是weight模式的&lt;/div&gt;&lt;div&gt;如果本节点是不使用权重模式，那么本节点可能是bps/iops模式，&lt;br&gt;那么该节点又会影响子节点，这和权重模式相冲突&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;保留带宽是为了分配leaf 和 children 的带宽的，所以如果子节点和本节点需要使用权重模式，&lt;/div&gt;&lt;div&gt;则必须指定保留带宽，否则子节点和本节点的带宽分配根据探测到的带宽&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;br&gt;&lt;div&gt;weight 和 leaf weight&lt;/div&gt;&lt;div&gt;weight 不仅代表了该节点占peer nodes 的权重比例，同时也代表了该节点是否已经是权重模式&lt;/div&gt;&lt;div&gt;leaf weight仅代表该cgroup的带宽权重，默认为0，表示该节点的IO没有限制&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;只有active 节点其权重会反应到parent-》children weight上&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="-1200" y="-690" width="600" height="620" as="geometry" />
         </mxCell>
         <mxCell id="AnmdYsWiVzskDCuWbKyH-1" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d80073;strokeColor=#A50040;fontColor=#ffffff;" vertex="1" parent="1">
           <mxGeometry x="380" y="150" width="120" height="80" as="geometry" />
@@ -73,38 +73,62 @@
         <mxCell id="AnmdYsWiVzskDCuWbKyH-25" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" vertex="1" parent="1">
           <mxGeometry x="180" y="690" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="AnmdYsWiVzskDCuWbKyH-32" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="AnmdYsWiVzskDCuWbKyH-29" target="AnmdYsWiVzskDCuWbKyH-30">
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-32" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="AnmdYsWiVzskDCuWbKyH-191" target="AnmdYsWiVzskDCuWbKyH-30">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="140" y="-615" />
+              <mxPoint x="140" y="-340" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-195" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="AnmdYsWiVzskDCuWbKyH-29" target="AnmdYsWiVzskDCuWbKyH-30">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="AnmdYsWiVzskDCuWbKyH-29" value="weight" style="rounded=1;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
-          <mxGeometry x="-366.5" y="-530" width="216.5" height="310" as="geometry" />
+          <mxGeometry x="-290" y="-370" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="AnmdYsWiVzskDCuWbKyH-149" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="AnmdYsWiVzskDCuWbKyH-30" target="AnmdYsWiVzskDCuWbKyH-147">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-187" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="AnmdYsWiVzskDCuWbKyH-30" target="AnmdYsWiVzskDCuWbKyH-41">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="277" y="-45" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-192" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="AnmdYsWiVzskDCuWbKyH-30" target="AnmdYsWiVzskDCuWbKyH-191">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="150" y="-355" />
+              <mxPoint x="150" y="-630" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="AnmdYsWiVzskDCuWbKyH-30" value="none" style="rounded=1;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
           <mxGeometry x="186.5" y="-370" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="AnmdYsWiVzskDCuWbKyH-37" value="子节点都不再是weight模式&lt;br&gt;&lt;span&gt;&lt;br&gt;echo maj:min 0 &amp;gt; weight_device&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;text-align: center&quot;&gt;&lt;br&gt;leaf weight = 0&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="-33.5" y="-440" width="180" height="90" as="geometry" />
+          <mxGeometry x="470" y="-220" width="180" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="AnmdYsWiVzskDCuWbKyH-39" value="父节点必须是weight模式&lt;br&gt;&lt;span&gt;&lt;br&gt;echo maj:min 4000 &amp;gt; weight_device&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;text-align: center&quot;&gt;&lt;br&gt;leaf weight = weight_device&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="-43.5" y="-310" width="220" height="90" as="geometry" />
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-39" value="&lt;br&gt;父节点必须是weight模式&lt;br&gt;&lt;span&gt;&lt;br&gt;echo maj:min 4000 &amp;gt; weight_device&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;text-align: center&quot;&gt;&lt;br&gt;leaf weight = weight_device&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-115" y="-730" width="220" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="AnmdYsWiVzskDCuWbKyH-40" value="" style="endArrow=classic;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="AnmdYsWiVzskDCuWbKyH-30" target="AnmdYsWiVzskDCuWbKyH-29">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="-243.5" y="-400" as="sourcePoint" />
-            <mxPoint x="-193.5" y="-450" as="targetPoint" />
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-186" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="AnmdYsWiVzskDCuWbKyH-41" target="AnmdYsWiVzskDCuWbKyH-30">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="247" y="-60" />
+            </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="AnmdYsWiVzskDCuWbKyH-41" value="带宽预留" style="rounded=1;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
-          <mxGeometry x="-310" y="-290" width="120" height="60" as="geometry" />
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-189" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="AnmdYsWiVzskDCuWbKyH-41" target="AnmdYsWiVzskDCuWbKyH-29">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="AnmdYsWiVzskDCuWbKyH-43" value="&lt;span&gt;1. 更新子节点的带宽&lt;br&gt;&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="-400" y="-310" width="220" height="90" as="geometry" />
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-41" value="带宽预留&lt;br&gt;预留代管只针对weight模式有意义" style="rounded=1;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-290" y="-90" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="AnmdYsWiVzskDCuWbKyH-45" value="&lt;span&gt;更新子节点的带宽，此时带宽分配按照根节点探测到的带宽分配&lt;br&gt;&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="-220" y="-305" width="130" height="90" as="geometry" />
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-45" value="预留带宽清零后，所有的子节点进入none 模式&lt;span&gt;&lt;br&gt;&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-47.5" y="-110" width="215" height="45" as="geometry" />
         </mxCell>
         <mxCell id="AnmdYsWiVzskDCuWbKyH-51" value="sub root" style="ellipse;whiteSpace=wrap;html=1;fillColor=#008a00;strokeColor=#005700;fontColor=#ffffff;" vertex="1" parent="1">
           <mxGeometry x="80" y="460" width="120" height="80" as="geometry" />
@@ -344,7 +368,7 @@
           <mxGeometry x="-600" y="1380" width="20" height="20" as="geometry" />
         </mxCell>
         <mxCell id="AnmdYsWiVzskDCuWbKyH-146" value="hierarchy" style="rounded=1;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
-          <mxGeometry x="216.5" y="-90" width="120" height="60" as="geometry" />
+          <mxGeometry x="230" y="80" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="AnmdYsWiVzskDCuWbKyH-148" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="AnmdYsWiVzskDCuWbKyH-147" target="AnmdYsWiVzskDCuWbKyH-30">
           <mxGeometry relative="1" as="geometry" />
@@ -473,6 +497,24 @@
         </mxCell>
         <mxCell id="AnmdYsWiVzskDCuWbKyH-177" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" vertex="1" parent="1">
           <mxGeometry x="-720" y="910" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-188" value="设置预留带宽&lt;br&gt;echo 253：32 800000 &amp;gt; reserved_bw" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-25" y="-45" width="215" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-190" value="进入weight模式，这时候需要&lt;br&gt;更新子节点的所有带宽" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="-205" y="-200" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-191" value="weight" style="rounded=1;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-300" y="-660" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-194" value="当子节点都不再是weight模式后，或者没有子节点时，才可以退出&lt;br&gt;&lt;span&gt;&lt;br&gt;echo maj:min 0 &amp;gt; weight_device&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;text-align: center&quot;&gt;&lt;br&gt;leaf weight = 0&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-115" y="-600" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-196" value="&lt;br&gt;带宽预留节点要退出weight 模式，&lt;br&gt;如果子节点还有weight模式且他们依赖这个预留带宽进行分配（因为深层次可能还有子树），那么不能退出&lt;br&gt;&lt;span&gt;&lt;br&gt;echo maj:min 0 &amp;gt; weight_device&lt;br&gt;&lt;br&gt;退出后不需要对子节点进行操作，因为没有依赖本结点了&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;text-align: center&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-140" y="-450" width="220" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-197" value="当子节点都不再是weight模式后，或者没有子节点时，才可以退出&lt;br&gt;&lt;span&gt;&lt;br&gt;echo maj:min 0 &amp;gt; weight_device&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;text-align: center&quot;&gt;&lt;br&gt;leaf weight = 0&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-390" y="-230" width="180" height="90" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
