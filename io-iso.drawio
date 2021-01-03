@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-01-03T14:54:13.686Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36" etag="bo5PPMsXetWsplvls9n8" version="13.10.9" type="github">
+<mxfile host="app.diagrams.net" modified="2021-01-03T15:02:30.807Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36" etag="wGgDyQntuqUekwQ9Oolb" version="13.10.9" type="github">
   <diagram id="-onmPk4miG5qpfCvKEWN" name="Page-1">
-    <mxGraphModel dx="10073" dy="4680" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="4622" dy="1603" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -668,6 +668,48 @@
         </mxCell>
         <mxCell id="CpN3WM_drRf_8xtwejHY-5" value="C&lt;br&gt;weight = 200&lt;br&gt;weight bw = 5 MB/s" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d80073;strokeColor=#A50040;fontColor=#ffffff;" vertex="1" parent="1">
           <mxGeometry x="503" y="2245" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CpN3WM_drRf_8xtwejHY-22" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="CpN3WM_drRf_8xtwejHY-10" target="CpN3WM_drRf_8xtwejHY-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CpN3WM_drRf_8xtwejHY-10" value="weight = 300&lt;br&gt;leaf weight = 300&lt;br&gt;weight has rule = 1&lt;br&gt;&lt;br&gt;开启weight 模式&lt;br&gt;leaf weight 不允许为0" style="rounded=1;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="1353" y="-360" width="182" height="119" as="geometry" />
+        </mxCell>
+        <mxCell id="CpN3WM_drRf_8xtwejHY-12" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" target="CpN3WM_drRf_8xtwejHY-13" parent="1" source="CpN3WM_drRf_8xtwejHY-10">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+            <mxPoint x="1173" y="-284" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CpN3WM_drRf_8xtwejHY-13" value="inactive&lt;br&gt;leaf 不计入 parent&lt;br&gt;active = 0" style="rounded=1;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="873" y="-330.5" width="210" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CpN3WM_drRf_8xtwejHY-14" value="1. 长时间没有io" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="1033" y="-433" width="93" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="CpN3WM_drRf_8xtwejHY-21" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="CpN3WM_drRf_8xtwejHY-15" target="CpN3WM_drRf_8xtwejHY-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CpN3WM_drRf_8xtwejHY-15" value="active&lt;br&gt;tg-&amp;gt;leaf weight 计入&lt;br&gt;tg-&amp;gt;children_weight&lt;br&gt;active = 1" style="rounded=1;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="873" y="-558" width="210" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="CpN3WM_drRf_8xtwejHY-16" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" source="CpN3WM_drRf_8xtwejHY-13" target="CpN3WM_drRf_8xtwejHY-15" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CpN3WM_drRf_8xtwejHY-17" value="有io时&lt;br&gt;迅速分配带宽" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="869" y="-426" width="82" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="CpN3WM_drRf_8xtwejHY-19" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="CpN3WM_drRf_8xtwejHY-18" target="CpN3WM_drRf_8xtwejHY-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CpN3WM_drRf_8xtwejHY-18" value="weight = 0&lt;br&gt;leaf weight = 0&lt;br&gt;weight has rule = 0" style="rounded=1;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="1353" y="-546" width="182" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CpN3WM_drRf_8xtwejHY-20" value="echo 253:32 300 &amp;gt; blkio.throtle.weight_device" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="1477" y="-444" width="254" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="CpN3WM_drRf_8xtwejHY-23" value="echo 253:32 0 &amp;gt; blkio.throtle.weight_device&lt;br&gt;如果直接子节点都是子层级模式,且设置了带宽,才可退出&lt;br&gt;也就是说 没有节点需要依赖该节点分配权重带宽了" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="1186" y="-440" width="305" height="46" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
