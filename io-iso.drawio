@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-01-03T15:11:26.455Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36" etag="v8ES-vbgkU4A_SjBOeCZ" version="13.10.9" type="github">
+<mxfile host="app.diagrams.net" modified="2021-01-03T15:16:01.570Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36" etag="x3_UFYxLk34yDc2X8owu" version="13.10.9" type="github">
   <diagram id="-onmPk4miG5qpfCvKEWN" name="Page-1">
     <mxGraphModel dx="5262" dy="1964" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -73,11 +73,6 @@
         <mxCell id="AnmdYsWiVzskDCuWbKyH-25" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" parent="1" vertex="1">
           <mxGeometry x="180" y="690" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="AnmdYsWiVzskDCuWbKyH-195" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="AnmdYsWiVzskDCuWbKyH-29" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1609.5" y="-42" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="AnmdYsWiVzskDCuWbKyH-199" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="AnmdYsWiVzskDCuWbKyH-29" target="CpN3WM_drRf_8xtwejHY-13" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1545" y="47" as="targetPoint" />
@@ -89,36 +84,27 @@
         <mxCell id="AnmdYsWiVzskDCuWbKyH-29" value="weight" style="rounded=1;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
           <mxGeometry x="1133" y="-87" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="AnmdYsWiVzskDCuWbKyH-187" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="CpN3WM_drRf_8xtwejHY-24" target="AnmdYsWiVzskDCuWbKyH-41" edge="1">
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-187" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="CpN3WM_drRf_8xtwejHY-28" target="AnmdYsWiVzskDCuWbKyH-41" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1700" y="238" />
-            </Array>
             <mxPoint x="1699.5" y="-27" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="AnmdYsWiVzskDCuWbKyH-37" value="子节点都不再是weight模式&lt;br&gt;&lt;span&gt;&lt;br&gt;echo maj:min 0 &amp;gt; weight_device&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;text-align: center&quot;&gt;&lt;br&gt;leaf weight = 0&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="1513" y="91" width="180" height="90" as="geometry" />
+          <mxGeometry x="1489" y="135" width="180" height="90" as="geometry" />
         </mxCell>
         <mxCell id="AnmdYsWiVzskDCuWbKyH-39" value="&lt;br&gt;父节点必须是weight模式&lt;br&gt;&lt;span&gt;&lt;br&gt;echo maj:min 4000 &amp;gt; weight_device&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;text-align: center&quot;&gt;&lt;br&gt;leaf weight = weight_device&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="1881" y="-423" width="220" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="AnmdYsWiVzskDCuWbKyH-186" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="AnmdYsWiVzskDCuWbKyH-41" target="CpN3WM_drRf_8xtwejHY-24" edge="1">
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-186" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" parent="1" source="AnmdYsWiVzskDCuWbKyH-41" target="CpN3WM_drRf_8xtwejHY-28" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1670" y="223" />
-            </Array>
             <mxPoint x="1669.5" y="-27" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="AnmdYsWiVzskDCuWbKyH-189" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" parent="1" source="AnmdYsWiVzskDCuWbKyH-41" target="AnmdYsWiVzskDCuWbKyH-29" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="AnmdYsWiVzskDCuWbKyH-41" value="带宽预留&lt;br&gt;预留代管只针对weight模式有意义" style="rounded=1;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-41" value="子层级带宽&lt;br&gt;只针对weight模式有意义" style="rounded=1;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
           <mxGeometry x="1133" y="193" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="AnmdYsWiVzskDCuWbKyH-45" value="预留带宽清零后，所有的子节点进入none 模式&lt;span&gt;&lt;br&gt;&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="1375.5" y="173" width="215" height="45" as="geometry" />
         </mxCell>
         <mxCell id="AnmdYsWiVzskDCuWbKyH-51" value="sub root" style="ellipse;whiteSpace=wrap;html=1;fillColor=#008a00;strokeColor=#005700;fontColor=#ffffff;" parent="1" vertex="1">
           <mxGeometry x="80" y="460" width="120" height="80" as="geometry" />
@@ -485,8 +471,8 @@
         <mxCell id="AnmdYsWiVzskDCuWbKyH-188" value="设置子层级带宽&lt;br&gt;echo 253：32 800000 &amp;gt; reserved_bw" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="1398" y="238" width="215" height="45" as="geometry" />
         </mxCell>
-        <mxCell id="AnmdYsWiVzskDCuWbKyH-190" value="进入weight模式，这时候需要&lt;br&gt;更新子节点的所有带宽" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
-          <mxGeometry x="1218" y="83" width="170" height="30" as="geometry" />
+        <mxCell id="AnmdYsWiVzskDCuWbKyH-190" value="如果父节点不是weight模式,那么本节点必须设置了子层级,且设置了子层级带宽,才&lt;br&gt;使能weight模式，这时候需要&lt;br&gt;更新子节点的所有带宽" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="1084" y="75" width="439" height="46" as="geometry" />
         </mxCell>
         <mxCell id="AnmdYsWiVzskDCuWbKyH-194" value="当子节点都不再是weight模式后，或者没有子节点时，才可以退出&lt;br&gt;&lt;span&gt;&lt;br&gt;echo maj:min 0 &amp;gt; weight_device&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;text-align: center&quot;&gt;&lt;br&gt;leaf weight = 0&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="1429" y="-542" width="180" height="90" as="geometry" />
@@ -664,14 +650,20 @@
         <mxCell id="CpN3WM_drRf_8xtwejHY-23" value="echo 253:32 0 &amp;gt; blkio.throtle.weight_device&lt;br&gt;如果直接子节点都是子层级模式,且设置了带宽,才可退出&lt;br&gt;也就是说 没有节点需要依赖该节点分配权重带宽了" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
           <mxGeometry x="1352" y="-433" width="305" height="46" as="geometry" />
         </mxCell>
+        <mxCell id="CpN3WM_drRf_8xtwejHY-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="CpN3WM_drRf_8xtwejHY-24" target="CpN3WM_drRf_8xtwejHY-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="CpN3WM_drRf_8xtwejHY-24" value="非root 节点 且父节点非weight" style="rounded=1;whiteSpace=wrap;html=1;align=center;fillColor=#008a00;strokeColor=#005700;fontColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="1613" y="-90" width="120" height="60" as="geometry" />
+          <mxGeometry x="1663" y="-135" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="CpN3WM_drRf_8xtwejHY-26" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="CpN3WM_drRf_8xtwejHY-25" target="CpN3WM_drRf_8xtwejHY-18">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="CpN3WM_drRf_8xtwejHY-25" value="root 节点" style="rounded=1;whiteSpace=wrap;html=1;align=center;fillColor=#008a00;strokeColor=#005700;fontColor=#ffffff;" vertex="1" parent="1">
           <mxGeometry x="1663" y="-772" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CpN3WM_drRf_8xtwejHY-28" value="设置use hierarchy" style="rounded=1;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="1632" y="3" width="182" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
